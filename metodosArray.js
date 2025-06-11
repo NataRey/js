@@ -108,6 +108,8 @@ let miCanasta3 =["Manzana","Pera","fresa","mango", "Uva","banana","kiwi"];
 let frutasReemplazadas = miCanasta3.splice(3,1,"lulo","papaya","melon");
 console.log(miCanasta3);
 
+//? hola 
+
 
 
 
