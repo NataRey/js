@@ -108,7 +108,125 @@ let miCanasta3 =["Manzana","Pera","fresa","mango", "Uva","banana","kiwi"];
 let frutasReemplazadas = miCanasta3.splice(3,1,"lulo","papaya","melon");
 console.log(miCanasta3);
 
-//? hola 
+//sort() organiza los elementos de un arreglo alfabeticamente 
+let listaAlumnos = ["Victor", "Luisa","Sebastian","Horacio"];
+console.log(listaAlumnos);
+listaAlumnos.sort();
+console.log(listaAlumnos
+);
+
+ listaDeNumeros =[10,2,25,5,1];
+ console.log(listaDeNumeros);
+listaDeNumeros.sort();
+ console.log(listaDeNumeros);
+
+//que la maquina entendio usando sort con numeros 
+//"1" viene antes que el "10"
+//10 vienes antes de 2 
+ //"2" viene antes que el "25"
+// viene el 5 al final
+
+listaDeNumeros.sort(function(a,b){
+    return a - b; // si a es mas peque;o que b da un negativo // le decimos a la maquina que ponga a antes que b 
+    //1-10=-9
+    //1 10
+    //10-2=8
+    //2 10
+    //1 2 10
+    //10-25= -15
+    //10 25
+    //1 2 10 25
+});
+
+console.log(listaDeNumeros);
+let listaNumeros =[10,2,25,5,1];
+listaNumeros.sort(function(a,b){
+    return b - a;//si b es mas grande que a el resultado es positivo //le decimos a la maquina que ponga b antes que a 
+});
+console.log(listaNumeros);
+
+// reverse()//invierte el orden de los elementos de un array
+let listaNumeros2 =[100,99,98];
+listaNumeros2.reverse();// invertir los numeros
+console.log(listaNumeros2);
+
+//foreach() ejecuta una funcion para cada elemento del array 
+let tareasDelDia =["sacar la basura", "tender la cama", "lavar los platos"];
+
+tareasDelDia.forEach(function(x){
+    console.log("he revisado la tarea ", x);
+});
+
+//map() crea un array con los resultados de lo que le dije que hiciera en dicha funcion y mantiene el array original 
+
+let puntuacionesExamen = [80,45,90,60,70];
+
+console.log("puntuaciones originales ", puntuacionesExamen);
+
+let mensajeDeAprobacion = puntuacionesExamen.map(function(puntacion){
+    if(puntacion >=60){
+        return "Aprobado con "+ puntacion;
+    }else{
+        return "Reprobado con "+ puntacion;
+    }
+});
+
+console.log(mensajeDeAprobacion);
+console.log(puntuacionesExamen);
+
+//filter() crea un array con todos los elementos que pasan la prueba impletada por la funcion que le indique 
+
+let rangosDeEmpleado=[
+    {
+    nombre:"Andrea", rango: "admin"        
+},
+{
+    nombre:"Cristian", rango: "user"
+},
+{
+    nombre:"Diana", rango: "admin"
+},
+{
+    nombre:"Horacio", rango: "user"
+},
+{
+    nombre:"Jaderson", rango: "admin"
+}];
+
+let administradores = rangosDeEmpleado.filter(function(rol){
+    return rol.rango === "admin";
+});
+
+console.log("los administradores son: ");
+console.log(administradores);
+
+
+//reduce() Aplica un afuncion a un acumulador y al valor del array (de izq a der) para reducirlo a un unico valor 
+
+let palabras =["Hola", "mundo","desde","javaScript"];
+console.log("Palabras separadas: " , palabras);
+let fraseCompleta = palabras.reduce(function(fraseConstruida,palabraActual){
+    return fraseConstruida +" "+ palabraActual;
+});
+console.log("la frase commpleta es : ", fraseCompleta);
+
+
+let num2 =[ 100,75,120,90,50];
+
+console.log("puntuaciones de cada nivel ",num2);
+
+let Tpuntos = num2.reduce(function(acumulador, puntuacionActual){
+    console.log(`Sumando: ${acumulador} (lo que llevo) + ${puntuacionActual}(lo que acabo de encontrar)`);
+    return acumulador + puntuacionActual;
+},0);
+
+console.log(Tpuntos);
+
+
+
+
+
+
 
 
 
