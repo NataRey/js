@@ -288,11 +288,208 @@ console.log(misJuguetes);*/
 // el primer numero es la posicion indice donde quiero empezar a cortar
 // el segundo numero (opcional) la posicion indice antes de la cual quiero terminar de cortar 
 //                      0           1           2           3          4       5        
-let filaDeAmigos = ["valentina", "tobias", "sebastian", "samuel", "Nicolas","luisa"];
-console.log(filaDeAmigos);
+// let filaDeAmigos = ["valentina", "tobias", "sebastian", "samuel", "Nicolas","luisa"];
+// console.log(filaDeAmigos);
 
-let losAmigosDelMedio = filaDeAmigos.slice(1,3);
-console.log("Los amigos del medio son: " , losAmigosDelMedio);
+// let losAmigosDelMedio = filaDeAmigos.slice(1,3);
+// console.log("Los amigos del medio son: " , losAmigosDelMedio);
+
+// let coleccion =[
+//     {
+//         id:1, titulo:"Cien años de Soledad",autor:"Gabriel Garcia Marquez",añoPublicacion:1967,genero:"Fantasía",disponible:true
+//     },{
+//         id:2, titulo:"1984",autor:"George Orwell",añoPublicacion:1949,genero:"Distopía",disponible:false
+//     },{
+//         id:3, titulo:"La rebelión de las ratas",autor:"Fernando Soto",añoPublicacion:1962,genero:"Realismo",disponible:true
+//     },{
+//         id:4, titulo:"Don Quijote De la Mancha",autor:"Miguel De Cervantes",añoPublicacion:1605,genero:"Sátira",disponible:true
+//     },{
+//         id:5,titulo: "El Señor de los Anillos: La Comunidad del Anillo",autor: "J.R.R. Tolkien",añoPublicacion: 1954,genero: "Fantasía",disponible: false
+//     }
+// ];
+
+// coleccion.push({
+//     id: 6,
+//     titulo: "El Silmarillion",
+//     autor: "J.R.R. Tolkien",
+//     añoPublicacion: 1977,
+//     genero: "Fantasía",
+//     disponible: true});
+
+// console.log("agregando un libro al final de la coleccion" , coleccion);
+
+
+// coleccion.unshift({
+//     id: 7,
+//     titulo: "El principito",
+//     autor: "Antoine de Saint-Exupery",
+//     añoPublicacion: "1943",
+//     genero: "Literatura infantil",
+//     disponible: false,
+// });
+// console.log("añadiendo un libro al inicio de la coleccion" , coleccion); 
+
+// let quitarElUltimoLibro = coleccion.pop();
+// console.log("eliminando el ultimo libro",quitarElUltimoLibro);
+
+// coleccion.shift();
+// console.log("eliminando el primer libro",coleccion);
+
+// const idLibro =3;
+// let buscarLibro =coleccion.findIndex(coleccion =>coleccion.id === idLibro);
+// coleccion.splice (buscarLibro ,1)
+// console.log("depues de eliminar el id 3 " , coleccion);
+
+// // 4. Actualizar/Modificar Libros:
+// //    * Inserta un nuevo libro en una posición específica del array, sin reemplazar ninguno existente.
+// coleccion.splice(2, 0, { id: 108, titulo: "Donde los árboles cantan", autor: "Laura Gallego", añoPublicacion: 2011, genero: "Fantasía", disponible: true });
+// console.log("\n--- Después de insertar un libro en la posición 2 (splice con 0 elementos a borrar) ---");
+// console.log(coleccion);
+
+// //    * Reemplaza uno o más coleccion en una posición específica del array.
+// // Reemplazamos el libro en la posición 1 (índice 1)
+// coleccion.splice(1, 1, { id: 109, titulo: "Fahrenheit 451", autor: "Ray Bradbury", añoPublicacion: 1953, genero: "Ciencia Ficción", disponible: true });
+// console.log("\n--- Después de reemplazar un libro en la posición 1 (splice con 1 elemento a borrar) ---");
+// console.log(coleccion);
+
+// // 5. Consulta y Filtrado:
+// //    * Crea un nuevo array con todos los coleccion publicados después del año 2000.
+// const coleccionPost2000 = coleccion.filter(libro => libro.añoPublicacion > 2000);
+// console.log("\n--- coleccion publicados después del año 2000 (filter) ---");
+// console.log(coleccionPost2000);
+
+// //    * Encuentra el primer libro cuyo `genero` sea "Ciencia Ficción" y esté `disponible`.
+// const primerCienciaFiccionDisponible = coleccion.find(libro => libro.genero === "Ciencia Ficción" && libro.disponible === true);
+// console.log("\n--- Primer libro de Ciencia Ficción disponible (find) ---");
+// console.log(primerCienciaFiccionDisponible);
+
+// //    * Encuentra el índice del libro con el `id` `109` (o cualquier ID que exista en tu colección).
+// const indiceLibro109 = coleccion.findIndex(libro => libro.id === 109);
+// console.log(`\n--- Índice del libro con ID 109 (findIndex) ---`);
+// console.log(indiceLibro109);
+
+// //    * Verifica si al menos un libro en la colección es del `autor` "Gabriel García Márquez".
+// const hayLibroGGM = coleccion.some(libro => libro.autor === "Gabriel García Márquez");
+// console.log(`\n--- ¿Hay algún libro de Gabriel García Márquez? (some) ---`);
+// console.log(hayLibroGGM);
+
+// // 6. Ordenamiento:
+// //    * Ordena la colección de coleccion alfabéticamente por `titulo`.
+// // Es importante hacer una copia antes de ordenar si no queremos modificar el array original
+// const coleccionOrdenadosPorTitulo = [...coleccion].sort((a, b) => a.titulo.localeCompare(b.titulo));
+// console.log("\n--- coleccion ordenados alfabéticamente por título (sort) ---");
+// console.log(coleccionOrdenadosPorTitulo);
+// console.log("\n--- Array original después de ordenar (no modificado si se copió antes) ---");
+// console.log(coleccion); // Demuestra que el array original no fue modificado si usamos spread operator
+
+// // 7. Combinación:
+// //    * Crea un segundo array de coleccion con algunos coleccion adicionales.
+// const nuevoscoleccion = [
+//     { id: 201, titulo: "El principito", autor: "Antoine de Saint-Exupéry", añoPublicacion: 1943, genero: "Fábula", disponible: true },
+//     { id: 202, titulo: "Harry Potter y la piedra filosofal", autor: "J.K. Rowling", añoPublicacion: 1997, genero: "Fantasía", disponible: false }
+// ];
+
+// //    * Combina el array original con el segundo array para formar una única colección.
+// const coleccionCompleta = coleccion.concat(nuevoscoleccion);
+// console.log("\n--- Colección completa (concat) ---");
+// console.log(coleccionCompleta);
+
+// // 8. Extracción (sin modificar el original):
+// //    * Crea un nuevo array que contenga solo los primeros 3 coleccion de la colección.
+// const primerosTrescoleccion = coleccion.slice(0, 3);
+// console.log("\n--- Primeros 3 coleccion (slice) ---");
+// console.log(primerosTrescoleccion);
+// console.log("\n--- Array original después de slice (no modificado) ---");
+// console.log(coleccion); // Demuestra que el array original no fue modificado
+
+
+// TODO                  **************     METODOS Math    **************
+
+// todo Math.random()
+// aleatorio
+
+console.log("Juego de adivinar el numero secreto");
+
+let numeroSecreto = Math.floor(Math.random()*10) ;
+console.log(numeroSecreto);
+
+// todo Math.floor()
+//redondea hacia abajo
+//Math.floor(5.8) es 5 
+
+let gramosChocolate = 287.5;
+let pesoBarra = 100;
+
+let numeroDeBarras = Math.floor(gramosChocolate / pesoBarra);
+console.log("puedes hacer "+numeroDeBarras+ "  de chocolate");
+
+// todo Math.ceil(x)
+//Redondea hacia arriba 
+//Math.ceil(5.2) = 6
+
+// 10 bombillas  y necesitamos 37 bombillas 
+
+let bombillaNecesarias = 37;
+let bombillasPorCaja = 10;
+
+// calculamos cuantas cajas necesitamos 
+let cajasAComprar = Math.ceil(bombillaNecesarias / bombillasPorCaja);
+console.log("las cajas a comprar son "+cajasAComprar);
+
+
+// todo Math.round(x)
+//redondea al mas cercano
+//Math.round(5.2) = 5
+//Math.round(5.8) = 6
+
+
+// todo Math.abs(x)
+// nos da el valor absoluto de un numero 
+//Math.abs(-5) = 5
+//Math.abs(6) = 6
+
+
+// todo Math.max(x,y,z)
+//Math.max(6, 20, 35, 5, 48) = 48
+
+let numeros = (6, 20, 35, 5, 48);
+let numeroMasGrande = Math.max(numeros);
+console.log(numeroMasGrande);
+
+
+// todo Math.min(x,y,z)
+let tiempo1 = 15.2;
+let tiempo2 = 14.2;
+let tiempo3 = 18.3;
+let tiempo4 = 14.5;
+
+let tiempoMinimo = Math.min(tiempo1,tiempo2,tiempo3,tiempo4);
+console.log(tiempoMinimo);
+
+// todo Math.pow(base, exponente)
+
+//Math.pow(2,3) = 2*2*2 =8
+
+//area= (lado *lado) o (lado ²)
+
+let ladoCuadrado= 7;
+
+let areaCuadrado = Math.pow(ladoCuadrado, 2);
+console.log(areaCuadrado);
+
+// todo Math.sqrt(x)
+
+// raiz cadrada 
+
+// lado = raiz cuadrada del area
+
+let areaTotal = 81;
+
+let longitudLado = Math.sqrt(areaTotal);
+console.log(longitudLado);
+
+
+
 
 
 
